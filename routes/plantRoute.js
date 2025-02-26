@@ -16,8 +16,8 @@ router.get("/", async (req, res) => {
 // Add a new plant
 router.post("/", async (req, res) => {
   try {
-    const { name, price, image } = req.body;
-    const newPlant = new Plant({ name, price, image });
+    const { email,message } = req.body;
+    const newPlant = new Plant({ email,message });
     await newPlant.save();
     res.status(201).json(newPlant);
   } catch (error) {
